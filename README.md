@@ -318,6 +318,275 @@ class MyApp extends StatelessWidget {
  <div>
  <img src="https://github.com/user-attachments/assets/599c613a-7e24-4d39-86c6-938b925053d2"height=500px>
  <img src="https://github.com/user-attachments/assets/bff50a72-cedb-4be3-96b5-0241ebe84edb"height=500px>
+</div>
+
+<h1 align="center">Task2</h1>
+ <h2 align="center"> 🔶🔸 Asynchronous Programming🔸🔶</h2>
+
+ ## What is  Asynchronous Programming?
+ - Asynchronous programming is a programming paradigm that allows tasks or operations to run independently and concurrently, without waiting for each other to complete before moving on to the next task. In traditional synchronous programming, tasks are executed one after another, and the program waits for each task to finish before proceeding to the next one.
+
+## What is Future Class ?
+- In Dart, the Future class represents the result of an asynchronous operation, which is a computation that doesn't complete immediately. Futures are often used in asynchronous programming to handle long-running tasks without blocking the main thread. For example, you might use a future to get data from a server, query data from a database, read a file, or do complicated computational work.
+
+## What is Duration class & Future.delayed() constructor with Example ?
+-Sure! Below is a detailed yet concise README file explaining the `Duration` class and the `Future.delayed()` constructor in Dart, along with an example.
+
+---
+
+# Duration Class & Future.delayed() Constructor
+
+This README provides an overview of the `Duration` class and the `Future.delayed()` constructor in Dart, including their definitions, key properties, and a usage example.
+
+## Duration Class
+
+The `Duration` class in Dart represents a span of time, such as a few seconds or hours. It is used to measure time intervals and schedule tasks.
+
+### Key Properties:
+- **days**: The number of days in the duration.
+- **hours**: The number of hours in the duration.
+- **minutes**: The number of minutes in the duration.
+- **seconds**: The number of seconds in the duration.
+- **milliseconds**: The number of milliseconds in the duration.
+- **microseconds**: The number of microseconds in the duration.
+
+### Example:
+```dart
+Duration duration = Duration(seconds: 5);
+print(duration.inSeconds); // Output: 5
+```
+
+## Future.delayed() Constructor
+
+The `Future.delayed()` constructor in Dart creates a `Future` that completes with a value after a specified duration. It is useful for scheduling tasks to be executed after a delay.
+
+### Key Properties:
+- **duration**: The `Duration` to wait before completing the future.
+- **computation**: An optional function that generates the value with which the future completes.
+
+### Example:
+```dart
+Future<int> futureDelayed = Future.delayed(Duration(seconds: 2), () => 42);
+```
+
+### Using Future.delayed() with async/await:
+```dart
+Future<void> main() async {
+  print('Waiting for 2 seconds...');
+  int result = await Future.delayed(Duration(seconds: 2), () => 42);
+  print('Result: $result'); // Output: Result: 42
+}
+```
+
+## Usage Example
+
+Below is a complete example that demonstrates how to use the `Duration` class and the `Future.delayed()` constructor together in a Dart application.
+
+```dart
+import 'dart:async';
+
+void main() async {
+  // Define a duration of 2 seconds
+  Duration duration = Duration(seconds: 2);
+
+  // Print a message and wait for the duration to complete
+  print('Waiting for ${duration.inSeconds} seconds...');
+  
+  // Use Future.delayed() to wait for the duration and then get a result
+  int result = await Future.delayed(duration, () => 42);
+  
+  // Print the result after the delay
+  print('Result: $result'); // Output: Result: 42
+}
+```
+
+## Conclusion
+
+The `Duration` class and the `Future.delayed()` constructor are powerful tools in Dart for managing time intervals and scheduling tasks to run after a delay. By understanding these concepts, developers can create more responsive and efficient applications.
+
+---
+## What is the Use of the async & await keyword?
+-Sure! Here is a concise README file explaining the use of the `async` and `await` keywords in Dart.
+
+---
+
+# Use of the async & await Keywords
+
+This README provides a brief overview of the `async` and `await` keywords in Dart, including their purpose and basic usage.
+
+## async Keyword
+
+The `async` keyword is used to mark a function as asynchronous. This allows the function to use `await` expressions to pause its execution until a `Future` completes.
+
+### Syntax:
+```dart
+Future<void> fetchData() async {
+  // Function body
+}
+```
+
+## await Keyword
+
+The `await` keyword is used within an `async` function to pause the execution of the function until a `Future` completes and returns a result. It simplifies chaining asynchronous operations.
+
+### Syntax:
+```dart
+var result = await someAsyncFunction();
+```
+
+## Example
+
+Below is an example demonstrating the use of `async` and `await` keywords to handle asynchronous operations in Dart.
+
+```dart
+import 'dart:async';
+
+// Simulate a network request by returning a Future
+Future<String> fetchData() async {
+  // Simulate a delay of 2 seconds
+  await Future.delayed(Duration(seconds: 2));
+  return 'Fetched Data';
+}
+
+void main() async {
+  print('Fetching data...');
+  
+  // Use await to wait for the fetchData function to complete
+  String data = await fetchData();
+  
+  // Print the result after the Future completes
+  print(data); // Output: Fetched Data
+}
+```
+## What is Recursion ? With Example.
+- Recursion in Flutter, as in general programming, refers to a function calling itself to solve a problem by breaking it down into smaller, more manageable sub-problems. Each recursive call tackles a smaller instance of the original problem until it reaches a base case, which stops the recursion. This technique is used to simplify complex tasks by dividing them into simpler, repetitive tasks. In Flutter, recursion can be applied to various tasks such as building widget trees, navigating routes, or processing data structures, enhancing code efficiency and readability when used appropriately.
+
+---
+
+### Key Components:
+1. **Base Case**: The condition under which the recursive function stops calling itself to prevent infinite recursion.
+2. **Recursive Case**: The part of the function where it calls itself with a modified argument, moving towards the base case.
+
+## Example
+
+### Factorial Calculation
+
+The factorial of a number \( n \) (denoted as \( n! \)) is the product of all positive integers less than or equal to \( n \). It can be defined recursively as:
+- \( n! = n \times (n-1)! \)
+- \( 0! = 1 \) (base case)
+
+### Dart Example:
+```dart
+int factorial(int n) {
+  // Base case
+  if (n <= 1) {
+    return 1;
+  }
+  // Recursive case
+  return n * factorial(n - 1);
+}
+
+void main() {
+  int number = 5;
+  int result = factorial(number);
+  print('Factorial of $number is $result'); // Output: Factorial of 5 is 120
+}
+```
+
+### Explanation:
+1. **Base Case**: When \( n \) is 1 or less, the function returns 1.
+2. **Recursive Case**: For \( n > 1 \), the function calls itself with \( n-1 \) and multiplies the result by \( n \).
+---
+## What is Timer class with example ?
+# Timer Class
+# Time Class Definition
+
+The `Time` class in programming typically represents a specific point or interval in time. It encapsulates time-related data, such as hours, minutes, seconds, and sometimes milliseconds. This class often provides methods for time manipulation, comparison, and formatting. For instance, in Dart, there is no direct `Time` class, but similar functionality is achieved using the `Duration` class for intervals and `DateTime` for specific moments. The `Duration` class represents a span of time, while `DateTime` represents a specific date and time, offering methods to manipulate and compare time values efficiently.
+
+---
+## Key Properties and Methods
+
+### Constructors
+- **Timer(Duration duration, void Function() callback)**: Creates a single-shot timer that runs the callback function once after the specified duration.
+- **Timer.periodic(Duration duration, void Function(Timer timer) callback)**: Creates a repeating timer that runs the callback function at specified intervals.
+
+### Methods
+- **cancel()**: Cancels the timer, preventing it from firing.
+
+## Example
+
+Below is an example demonstrating how to use the `Timer` class to create a single-shot timer and a periodic timer.
+
+### Single-shot Timer
+```dart
+import 'dart:async';
+
+void main() {
+  // Create a single-shot timer that fires after 3 seconds
+  Timer(Duration(seconds: 3), () {
+    print('Single-shot timer fired after 3 seconds');
+  });
+
+  print('Waiting for timer to fire...');
+}
+```
+
+### Periodic Timer
+```dart
+import 'dart:async';
+
+void main() {
+  // Create a periodic timer that fires every 2 seconds
+  Timer.periodic(Duration(seconds: 2), (Timer timer) {
+    print('Periodic timer fired');
+    // Optionally, cancel the timer after a certain condition
+    // timer.cancel();
+  });
+
+  print('Waiting for periodic timer to fire...');
+}
+```
+
+## What is Timer.periodic and use with Example?
+- The `Timer.periodic` constructor in Dart is used to create a timer that repeatedly fires at specified intervals. It is useful for scheduling tasks that need to be executed regularly.
+
+## Key Properties and Methods
+
+### Constructor
+- **Timer.periodic(Duration duration, void Function(Timer timer) callback)**: Creates a repeating timer that calls the provided callback function at specified intervals.
+
+### Method
+- **cancel()**: Cancels the timer, preventing it from firing again.
+
+## Example
+
+Below is an example demonstrating how to use the `Timer.periodic` constructor to create a periodic timer that fires every 2 seconds.
+
+```dart
+import 'dart:async';
+
+void main() {
+  // Create a periodic timer that fires every 2 seconds
+  Timer.periodic(Duration(seconds: 2), (Timer timer) {
+    print('Periodic timer fired');
+    
+    // Optionally, cancel the timer after a certain number of executions
+    // For example, cancel after 5 executions:
+    if (timer.tick >= 5) {
+      timer.cancel();
+      print('Timer cancelled after 5 executions');
+    }
+  });
+
+  print('Waiting for periodic timer to fire...');
+}
+```
+
+### Explanation
+1. **Timer.periodic**: Creates a timer that fires every 2 seconds.
+2. **Callback Function**: The callback function is executed each time the timer fires.
+3. **Cancel Timer**: The timer is cancelled after it has fired 5 times using the `cancel()` method.
+ ```
 
 
- </div>
+
