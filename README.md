@@ -587,9 +587,9 @@ void main() {
 2. **Callback Function**: The callback function is executed each time the timer fires.
 3. **Cancel Timer**: The timer is cancelled after it has fired 5 times using the `cancel()` method.
  ```
-<h1 align="center">Task3</h1>
- <h2 align="center"> 🔶🔸Digital Clock🔸🔶</h2>
- ```
+
+ 🔶🔸Digital Clock🔸🔶</h2>
+---
 # About
 The Digital Clock page is a minimalist web application designed to display the current time in an elegant and user-friendly interface. This clock updates every second, ensuring that the displayed time is always accurate and current.
 
