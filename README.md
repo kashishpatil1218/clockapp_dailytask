@@ -587,6 +587,57 @@ void main() {
 2. **Callback Function**: The callback function is executed each time the timer fires.
 3. **Cancel Timer**: The timer is cancelled after it has fired 5 times using the `cancel()` method.
  ```
+<h1 align="center">Task3</h1>
+ <h2 align="center"> 🔶🔸Digital Clock🔸🔶</h2>
+ ```
+# About
+The Digital Clock page is a minimalist web application designed to display the current time in an elegant and user-friendly interface. This clock updates every second, ensuring that the displayed time is always accurate and current.
+
+
+### Timer
+- **Definition**: A Timer is a function that allows you to execute a code block after a certain duration or repeatedly at specified intervals.
+- **Usage**: Useful for scheduling tasks to run in the future or periodically.
+- **Examples**:
+  - Setting a delay before executing a function.
+  - Running a function repeatedly at fixed intervals.
+
+### Datetime
+- **Definition**: The `datetime` module supplies classes for manipulating dates and times.
+- **Usage**: Provides functionalities to handle date and time operations like creating, comparing, and formatting dates and times.
+- **Examples**:
+  - Getting the current date and time.
+  - Parsing date strings into datetime objects.
+  - Formatting datetime objects into readable strings.
+
+### Datetime.now()
+- **Definition**: A method that returns the current local date and time.
+- **Usage**: Used to fetch the current date and time for various operations like logging, time-stamping events, and scheduling.
+- **Example**:
+  - `current_time = datetime.now()` retrieves the current local date and time.
+
+### Duration
+- **Definition**: Represents the difference between two dates or times.
+- **Usage**: Used to calculate the time span between two datetime objects.
+- **Examples**:
+  - Calculating the duration between two datetime events.
+  - Measuring elapsed time for an operation.
+
+### Timer.periodic
+- **Definition**: A method that allows setting up a timer that triggers a function at regular intervals.
+- **Usage**: Ideal for executing a recurring task at fixed time intervals.
+- **Examples**:
+  - Running a health check every 10 seconds.
+  - Polling for updates at regular intervals.
+   ```
+ # Images
+ <div>
+<img src="https://github.com/user-attachments/assets/8c81bf7e-5def-45b6-b4e5-f36bfa07dfae"height=500px>
+<img src="https://github.com/user-attachments/assets/d2f24f62-9dec-42c2-b046-69f286fc396f"height=500px>
+<img src="https://github.com/user-attachments/assets/dbebce54-b40f-480d-abdd-e25ab22aee16"height=500px>
+<img src="https://github.com/user-attachments/assets/e7043ca0-194b-40c9-a0b9-cbc0ac51c81c"height=500px>
+<img src="https://github.com/user-attachments/assets/2dff727c-0874-44cb-89ca-31ce2b6baed2"height=500px>
+</div>
+ ```
 
 
 
