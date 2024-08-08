@@ -638,6 +638,179 @@ The Digital Clock page is a minimalist web application designed to display the c
 <img src="https://github.com/user-attachments/assets/2dff727c-0874-44cb-89ca-31ce2b6baed2"height=500px>
 </div>
  ```
+<h1 align="center">Task4</h1>
+ <h2 align="center"> 🔶🔸 Analoge Clock🔸🔶</h2>
+ Sure! Here's a detailed README for your analog clock widget using Flutter's `Transform.rotate`:
+
+---
+
+# Analog Clock Widget
+
+This project is an analog clock widget built using Flutter, demonstrating the use of the `Transform.rotate` widget to rotate clock hands.
+
+## Features
+
+- Real-time display of hours, minutes, and seconds
+- Smooth and accurate hand movements
+- Customizable clock face and hand styles
+
+## Getting Started
+
+### Prerequisites
+
+- [Flutter SDK](https://flutter.dev/docs/get-started/install)
+- An IDE such as [Visual Studio Code](https://code.visualstudio.com/) or [Android Studio](https://developer.android.com/studio)
+
+### Installation
+
+1. **Clone the repository:**
+
+    ```sh
+    git clone https://github.com/yourusername/analog-clock-widget.git
+    cd analog-clock-widget
+    ```
+
+2. **Get the dependencies:**
+
+    ```sh
+    flutter pub get
+    ```
+
+3. **Run the application:**
+
+    ```sh
+    flutter run
+    ```
+
+## Usage
+
+### Code Overview
+
+The main component of the analog clock is implemented in the `lib/clock_widget.dart` file. Below is an overview of how the clock is constructed.
+
+### Clock Widget
+
+```dart
+import 'package:flutter/material.dart';
+import 'dart:async';
+
+class ClockWidget extends StatefulWidget {
+  @override
+  _ClockWidgetState createState() => _ClockWidgetState();
+}
+
+class _ClockWidgetState extends State<ClockWidget> {
+  Timer _timer;
+  DateTime _dateTime;
+
+  @override
+  void initState() {
+    super.initState();
+    _dateTime = DateTime.now();
+    _timer = Timer.periodic(Duration(seconds: 1), (Timer timer) {
+      setState(() {
+        _dateTime = DateTime.now();
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        width: 200,
+        height: 200,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              offset: Offset(0, 4),
+              blurRadius: 8,
+              color: Colors.black26,
+            ),
+          ],
+        ),
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            _buildHand(
+              angleRadians: _dateTime.second * 6 * (3.14159265359 / 180),
+              handLength: 0.9,
+              handWidth: 2,
+              color: Colors.red,
+            ),
+            _buildHand(
+              angleRadians: _dateTime.minute * 6 * (3.14159265359 / 180),
+              handLength: 0.75,
+              handWidth: 4,
+              color: Colors.black,
+            ),
+            _buildHand(
+              angleRadians: (_dateTime.hour % 12 + _dateTime.minute / 60) * 30 * (3.14159265359 / 180),
+              handLength: 0.5,
+              handWidth: 6,
+              color: Colors.black,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildHand({
+    @required double angleRadians,
+    @required double handLength,
+    @required double handWidth,
+    @required Color color,
+  }) {
+    return Transform.rotate(
+      angle: angleRadians,
+      child: Container(
+        width: handWidth,
+        height: 200 * handLength,
+        color: color,
+        alignment: Alignment.topCenter,
+      ),
+    );
+  }
+}
+```
+
+### Customization
+
+You can customize the clock hands and face by modifying the parameters in the `_buildHand` method and the `Container` widget in the `build` method.
+```
+### Updating the Time
+
+A `Timer` is used to update the time every second:
+
+```dart
+_timer = Timer.periodic(Duration(seconds: 1), (Timer timer) {
+  setState(() {
+    _dateTime = DateTime.now();
+  });
+});
+```
+ # Images
+ <div>
+<img src="https://github.com/user-attachments/assets/cc113434-83bc-4317-92dc-8913b3e52e03"height=500px>
+<img src="https://github.com/user-attachments/assets/038c2e33-7e36-4650-b91b-b8c420a7484b"height=500px>
+<img src="https://github.com/user-attachments/assets/3828c0e9-4444-48eb-90c2-7d322be2d4c6"height=500px>
+<img src="https://github.com/user-attachments/assets/450c6e4e-1b8e-4210-b9bf-5a8143b4470d"height=500px>
+<img src="https://github.com/user-attachments/assets/32f3bdba-020b-4343-8649-51ee094457a6"height=500px>
+<img src="https://github.com/user-attachments/assets/52580925-418b-4453-8107-1eaa32c5320a"height=500px>
+
+</div>
+
+
+
 
 
 
