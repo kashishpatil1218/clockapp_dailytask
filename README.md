@@ -588,7 +588,8 @@ void main() {
 3. **Cancel Timer**: The timer is cancelled after it has fired 5 times using the `cancel()` method.
  ```
 
- 🔶🔸Digital Clock🔸🔶</h2>
+<h1 align="center">Task3</h1>
+ <h2 align="center"> 🔶🔸 Analoge Clock🔸🔶</h2>
 ---
 # About
 The Digital Clock page is a minimalist web application designed to display the current time in an elegant and user-friendly interface. This clock updates every second, ensuring that the displayed time is always accurate and current.
@@ -808,6 +809,11 @@ _timer = Timer.periodic(Duration(seconds: 1), (Timer timer) {
 <img src="https://github.com/user-attachments/assets/52580925-418b-4453-8107-1eaa32c5320a"height=500px>
 
 </div>
+```
+
+<h1 align="center">Task5</h1>
+ <h2 align="center"> 🔶🔸 Strap Clock🔸🔶</h2>
+ 
 
 
 
